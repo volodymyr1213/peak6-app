@@ -1,22 +1,22 @@
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
-  name: {{ include "peaksix.fullname" . }}
+  name: {{ include "peak6.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "peaksix.name" . }}
-    helm.sh/chart: {{ include "peaksix.chart" . }}
+    app.kubernetes.io/name: {{ include "peak6.name" . }}
+    helm.sh/chart: {{ include "peak6.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app.kubernetes.io/name: {{ include "peaksix.name" . }}
+      app.kubernetes.io/name: {{ include "peak6.name" . }}
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: {{ include "peaksix.name" . }}
+        app.kubernetes.io/name: {{ include "peak6.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
       containers:
